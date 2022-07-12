@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testing/home_screen.dart';
 import 'package:testing/validator.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -28,13 +29,20 @@ class LoginScreen extends StatelessWidget {
                 key: const ValueKey("passwordField"),
                 controller: _passwordController,
                 decoration: const InputDecoration(hintText: "Enter password"),
-                validator: (value) => Validator.vaildateEmail(value ?? ""),
+                validator: (value) => Validator.validatePassword(value ?? ""),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 key: const ValueKey("loginButton"),
                 onPressed: () {
-                  _formKey.currentState?.validate();
+                  if (_formKey.currentState?.validate() == true) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Sign In'),
               )
