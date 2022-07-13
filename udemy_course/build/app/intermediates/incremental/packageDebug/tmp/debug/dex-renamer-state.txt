@@ -1,0 +1,4 @@
+#Tue Jul 12 10:17:41 NPT 2022
+base.0=/Users/sannyrai/Learnings/flutter-project/testing/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
